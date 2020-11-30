@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  ActivityIndicator,
 } from 'react-native';
 
 import {
@@ -22,14 +23,14 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
 import {
-  Button,
+  Header,
+  Image,
   Avatar,
   Input,
-  Image,
+  Button,
   Card,
-  Header,
+  Icon,
 } from 'react-native-elements';
 
 
