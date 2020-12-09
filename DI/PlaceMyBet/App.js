@@ -14,7 +14,6 @@ import {
   View,
   Text,
   StatusBar,
-  ActivityIndicator,
 } from 'react-native';
 
 import {
@@ -32,7 +31,6 @@ import {
   Card,
   Icon,
 } from 'react-native-elements';
-
 
 const App: () => React$Node = () => {
   return (
