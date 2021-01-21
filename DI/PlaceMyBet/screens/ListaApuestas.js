@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {
     View,
+    FlatList,
 } from 'react-native';
 
 import { Titulo } from '../components/Home/Titulo';
@@ -10,7 +11,15 @@ import { SubTitle } from '../components/ListaApuestas/SubTitle';
 
 
 export class ListaApuestas extends Component {
-
+    constructor(props) {
+        super(props)
+        //dadesAMostrar com a variable de l'estat de la classe
+        this.state = {
+            partidos: [{ title: 'Valencia vs Español  17/05/2020' }, { title: 'Madrid vs Levante 20/05/2020' }, { title: 'Athletic vs Barcelona  25/05/2020' },
+            { title: 'Betis vs Sevilla       01/06/2020' },
+            ]
+        }
+    }
     render() {
         return (
             <View>
@@ -22,7 +31,12 @@ export class ListaApuestas extends Component {
                 </View>
 
                 <View style={{ alignItems: "center" }}>
-                    <Botones></Botones>
+                    <FlatList
+                        data={this.state.partidos}
+                        keyExtractor={(item, index) => index.toString()}
+                        style={{ padding: 5 }}
+                        renderItem={(item) => (<Botones partidos={item} />)}
+                    />
                 </View>
             </View>
         )
