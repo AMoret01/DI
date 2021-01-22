@@ -4,6 +4,9 @@ import {
     View,
     FlatList,
 } from 'react-native';
+import {
+    Button,
+} from 'react-native-elements';
 
 import { Titulo } from '../components/Home/Titulo';
 import { Botones } from '../components/ListaApuestas/Botones';
@@ -36,6 +39,12 @@ export class ListaApuestas extends Component {
                         keyExtractor={(item, index) => index.toString()}
                         style={{ padding: 5 }}
                         renderItem={(item) => (<Botones partidos={item} />)}
+                    />
+                    <Button
+                        buttonStyle={{ borderWidth: 2, borderColor: '#70B603', width: 219, height: 53 }}
+                        title="Volver"
+                        titleStyle={{ color: '#70B603', fontSize: 27 }}
+                        type="outline"
                     />
                 </View>
             </View>
