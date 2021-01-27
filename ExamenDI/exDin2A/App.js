@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,24 +16,26 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 import { ElMeuItem } from './componentes/ElMeuItem';
 
-export class App extends React.Component {
+class App extends Component {
   render() {
     return (
-      <View>
+      <>
+        <View>
         <ElMeuItem></ElMeuItem>
-      </View>
+        </View>
+      </>
     );
-  };
-};
+  }
+}
+
+const styles = StyleSheet.create({
+  contenedor: {
+    flex: 1,
+    backgroundColor: '#008000',
+  },
+});
 
 export default App;
+
