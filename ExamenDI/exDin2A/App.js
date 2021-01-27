@@ -6,21 +6,29 @@
  * @flow strict-local
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
+  SafeAreaView,
   StyleSheet,
+  ScrollView,
   View,
+  Text,
+  StatusBar,
 } from 'react-native';
-import { ElMeuItem } from './components/ElMeuItem';
-import { ElTotal } from './components/ElTotal';
+
+
+import {ElMeuItem} from './components/ElMeuItem'; 
+import {ElTotal} from './components/ElTotal';
+import {Autor} from './components/Autor';
 
 export class App extends Component {
   render() {
-    return (
+    return(
       <View style={styles.colorPrimari}>
-
-        <ElMeuItem></ElMeuItem>
-        <ElTotal></ElTotal>
+  
+    <ElMeuItem></ElMeuItem>
+    <ElTotal></ElTotal>
+    <Autor></Autor>
       </View>
     );
   }
@@ -39,8 +47,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
   },
-
+  
 });
 
 export default App;
-
