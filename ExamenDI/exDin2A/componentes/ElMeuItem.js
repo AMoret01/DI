@@ -1,43 +1,62 @@
 
 
-import React, {Component} from 'react';
-import {StyleSheet, ScrollView, View, Text} from 'react-native';
+import React, { Component } from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+} from 'react-native';
 
-const users = [
-    {
-       name: 'Cereals',
-       description: 'Cereals farcits de xocolata',
-       quantity: 2,
-       category: 'Cereals',
-       price: 5,
-    },
-
-   ]
+import {Input, Button, Card} from 'react-native-elements';
 
 export class ElMeuItem extends Component {
+
+    constructor (props) { 
+        super(props);
+        this.state = {
+            name: 'Cereals amb xocolata',
+            description: 'Cereals farcits de xocolata',
+            quantity: 2,
+            category: 'Cereals',
+            price: 5,
+        }
+    } 
+    
+
     render() {
-        return (
-            <View style={{padding: 10}}>
-              <View style={styles.directo}>
-                <View style={{alignItems: 'center'}}>
-                  <Text>{this.users.name}</Text>
-                  <Text>{this.users.description}</Text>
-                  <Text>{this.users.quantity}</Text>
-                  <Text>{this.users.category}</Text>
-                  <Text>{this.users.price}</Text>
-                </View>
-              </View>
+        return(
+            <View >
+            <View>
+                    <Text style={[{fontSize:24},styles.colorSecundari2]}>Llistat:</Text>
+            </View>  
+            <View style={styles.sectionTitle}>                     
+             <Text>{this.state.name}</Text>
+             <Text>{this.state.description}</Text>
+             <Text style= {{textAlign: 'right'}}> Preu: {this.state.price}</Text>           
+              </View> 
             </View>
+
         );
-      }
+    }
 }
+
 const styles = StyleSheet.create({
-  directo: {
-    marginTop: 20,
-    marginLeft: 25,
-    backgroundColor: '#ff8000',
-    borderColor: '#252850',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-});
+   
+    colorSecundari2: {
+        color: 'black',
+        textAlign: 'left',
+      },
+      sectionTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        padding: 5,
+        margin: 5,
+        borderWidth: 1,
+        borderColor: 'blue',
+        backgroundColor: '#ff9906',
+      },
+    
+  });
