@@ -29,16 +29,12 @@ export class ElMeuItem extends Component {
     render() {
         return(
             <View >
-            <View>
-                    <Text style={[{fontSize:24},styles.colorSecundari2]}>Llistat:</Text>
-            </View>  
             <View style={styles.sectionTitle}>                     
-             <Text>{this.state.name}</Text>
-             <Text>{this.state.description}</Text>
-             <Text style= {{textAlign: 'right'}}> Preu: {this.state.price}</Text>           
+             <Text name={this.state.name}></Text>
+             <Text description={this.state.description}></Text>
+             <Text style= {{textAlign: 'right'}} preu={this.state.price}> Preu: </Text>           
               </View> 
             </View>
-
         );
     }
 }
